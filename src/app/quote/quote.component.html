@@ -1,0 +1,33 @@
+<h1 style="text-align: center">ADD A QUOTE!</h1>
+
+<hr>
+
+<div class="container">
+
+    <div class="row">
+        <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+    </div>
+    
+</div>
+<br>
+<div class="container">
+<div class="row" *ngFor="let quote of quotes;let i = 'index'">
+      
+<div class="col">
+<div class=card style="width:45%">
+<div class="card-header">Quote</div>
+<div class="card-body">
+<p appStrikethrough>{{quote.name}} posted on {{quote.completeDate|date|uppercase}}</p>
+</div>
+</div>
+<div class="row"> 
+<div class="col-6">
+    <button class="btn btn-outline-dark" (click)='toogleDetails(i)'>Show Author</button>
+</div>
+
+</div>
+<app-quote-details *ngIf="quote.showAuthor" [quote]='quote'(isComplete)='deleteQuote($event,i)'></app-quote-details>
+</div>
+</div>
+
+</div>
