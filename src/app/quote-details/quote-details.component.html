@@ -1,0 +1,25 @@
+<div class="card" style="width:45%">
+    <div class="card-header">Author</div>
+    <p>{{quote.author}} </p>
+    <p>This quote was posted {{quote.completeDate|dateCount}}</p>
+    </div><br>
+        <div class="four wide column center aligned votes">
+          <div class="ui statistic">
+            <div class="card" style="width: 45%">
+              <div class="card-header">
+                  Votes:
+                </div>
+                <div class="card-body">
+            <div class="value">
+              {{ votes }}
+            </div>
+            </div> 
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-outline-dark" href (click)="likeVote()"><i class="fas fa-thumbs-up">&nbsp;upvote</i></button>&nbsp;
+        <button class="btn btn-outline-dark" href (click)="dislikeVote()"><i class="fas fa-thumbs-down">&nbsp;downvote</i></button>
+        <br><br>
+        <button class = "btn btn-danger"(click) = 'quoteDelete(true)'>Delete</button>
+        <br>
+
